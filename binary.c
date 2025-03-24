@@ -26,7 +26,7 @@ void binary_to_decimal(char *string, int length) {
 int main(void) {
 	char buffer[MAX_SIZE+1];
 	printf("Enter binary: ");
-	scanf("%8s", buffer);
+	scanf("%16s", buffer);
 	printf("\n");
 	int length = strlen(buffer);
 	binary_to_decimal(buffer, length);
