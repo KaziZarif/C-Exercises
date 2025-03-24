@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_SIZE 8
+#define MAX_SIZE 16
 
 int power_of_two(int n) {
 	return 1 << n;
