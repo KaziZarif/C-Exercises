@@ -17,8 +17,7 @@ A collection of C programming exercises I've solved.
   **Example Input:**
 HELOWRD0122343526
 
-**Decoded Output:**
-
+  **Decoded Output:**
 HELLOWORLD
 
 - `program.c`  
