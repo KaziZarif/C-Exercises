@@ -12,7 +12,7 @@ int main(void) {
 		return 1;
 	}
 	printf("Enter line: ");
-	scanf("%127s", msg);
+	fgets(msg, 127, stdin);
 	char *ptr = msg;
 	while (*ptr) {
 		if ((*ptr >= 'a' && *ptr <= 'z') || (*ptr >= 'A' && *ptr <= 'Z')) {
