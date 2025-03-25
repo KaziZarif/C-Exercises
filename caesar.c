@@ -11,6 +11,7 @@ int main(void) {
 		printf("Invalid key!\n");
 		return 1;
 	}
+	while (getchar() != '\n');
 	printf("Enter line: ");
 	fgets(msg, 127, stdin);
 	char *ptr = msg;
