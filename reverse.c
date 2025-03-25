@@ -8,6 +8,7 @@ int main(void) {
 		int index = strlen(msg) - 1;
 		if (msg[index] == '\n') {
 			msg[index] = '\0';
+			index--;
 		}
 		for(int i = index; i >= 0; i--) {
 			printf("%c", msg[i]);
