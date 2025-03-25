@@ -20,6 +20,7 @@ int main(int argc, char** argv) {
 				printf("%c", *ptr);
 			}
 		}
+		printf("\n");
 	}
 	return 0;
 	
