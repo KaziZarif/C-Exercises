@@ -13,5 +13,15 @@ int main(void) {
 	}
 	printf("Enter line: ");
 	scanf("%127s", msg);
+	char *ptr = msg;
+	while (*ptr) {
+		if ((*ptr >= 'a' && *ptr <= 'z') || (*ptr >= 'A' && *ptr <= 'Z')) {
+			char base = (*ptr >= 'a') ? 'a' : 'A';
+			*ptr = ((*ptr - base + n) % 26) + base;
+		}
+		ptr++;
+	}
+	printf("\n");
+	printf("%s\n", msg);
 	return 0;
 }
