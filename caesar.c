@@ -23,6 +23,6 @@ int main(void) {
 		ptr++;
 	}
 	printf("\n");
-	printf("%s\n", msg);
+	printf("%s", msg);
 	return 0;
 }
