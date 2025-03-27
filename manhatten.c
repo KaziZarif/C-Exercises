@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
 		printf("Invalid Number of Arguments\n");
 		return 1;
 	}
-	const char* arg_names[] = {"width", "height", "Character Properties"};
+	const char* arg_names[] = {"Width", "Height", "Character Properties"};
 	for(int i = 1; i < argc; i++) {
 		if (!valid_number(argv[i])) {
 			if (i > 2){
