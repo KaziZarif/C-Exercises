@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 int valid_number(char* str) {
-	while(*str) {
+	while(*str) {	
 		if(!isdigit((unsigned char)*str)) {
 			return 0;
 		}
@@ -11,6 +11,45 @@ int valid_number(char* str) {
 	}
 	return 1;
 }
+
+void build_board(int width, int height, int x, int y, int limit) {
+	printf("+");
+	for (int i =0; i <= 2*width - 2; i++) {
+		printf("-");
+	}
+	printf("+\n");
+	
+	char* board = malloc(height * width * sizeof(char));
+	if (board == NULL) {
+		printf("Memory allocation failed\n");
+		return;
+	}
+	for(int i = 0; i < height; i++) {
+		for(int j = 0; j < width; j++) {
+			if (i == y && j == x) {
+				board[i*width + j] = 'C';
+			}
+			else {
+				board[i*width + j] = ' ';
+			}
+		}
+	}
+	for (int i = 0; i < height * width * sizeof(char); i++) {
+		printf("|%c", board[i]);
+		if ((i+1) % width == 0) {
+			printf("|\n");
+		}
+	}
+	free(board);
+	printf("+");
+	for (int i =0; i <= 2*width - 2; i++) {
+		printf("-");
+	}
+	printf("+\n");
+
+	return;
+}
+
 
 int main(int argc, char** argv) {
 	if (argc != 6) {
@@ -54,6 +93,8 @@ int main(int argc, char** argv) {
 		printf("Invalid Character Properties\n");
 		return 1;
 	}
+	
+	build_board(width, height, x, y, limit);
 	
 	return 0;
 }
