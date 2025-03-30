@@ -53,7 +53,7 @@ void build_board(int width, int height, int x, int y, int limit) {
 
 int main(int argc, char** argv) {
 	if (argc != 6) {
-		printf("Invalid Number of Arguments\n");
+		printf("Invalid Number Of Arguments\n");
 		return 1;
 	}
 	const char* arg_names[] = {"Width", "Height", "Character Properties"};
