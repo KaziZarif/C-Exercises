@@ -12,7 +12,7 @@ int check_anagram(char* str1, char* str2) {
 		}
 		str1++;
 	}
-	clean_str1[i] = '\0'
+	clean_str1[i] = '\0';
 	int j = 0;
 	while(*str2) {
 		if(isalnum(*str2)) {
@@ -20,7 +20,10 @@ int check_anagram(char* str1, char* str2) {
 		}
 		str2++;
 	}
-	clean_str2[j] = '\0'
+	clean_str2[j] = '\0';
+	if (i != j) {
+		return 0;
+	}
 }
 
 
@@ -31,7 +34,12 @@ int main(void) {
 	fgets(line, sizeof(line), stdin);
 	printf("Enter anagram: ");
 	fgets(anagram, sizeof(anagram), stdin);
-	
+	printf("\n");
+	if (check_anagram(line, anagram)) {
+		printf("Anagram!\n");
+	} else {
+		printf("Not an anagram.\n");
+	}
 	
 	return 0;
 }
