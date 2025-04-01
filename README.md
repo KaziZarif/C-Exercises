@@ -47,3 +47,7 @@ Handles newline characters properly and continues until EOF.
   A simple C program that mimics basic functionality of the Unix `tr` command.  
   It reads from standard input, replaces specified characters with their corresponding replacements, and prints the result to standard output.  
   Input is processed line by line until EOF is reached.
+
+- `anagram.c`  
+  Program that checks whether two input strings are anagrams of each other.
+  Two strings are anagrams if they contain the same characters in any order, ignoring case and non-alphanumeric characters.
