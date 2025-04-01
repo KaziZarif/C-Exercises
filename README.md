@@ -1,6 +1,6 @@
 # C-Exercises
 
-A collection of C programming exercises I've solved.
+A collection of C programming exercises I've solved. Easiest to hardest.
 
 ## Files
 
