@@ -40,4 +40,3 @@ The program takes five command-line arguments:
 
 ```bash
 ./manhatten <width> <height> <x> <y> <walk_limit>
-```
