@@ -32,6 +32,7 @@ Handles newline characters properly and continues until EOF.
 This C program visualizes how far a character can move on a 2D grid using Manhattan distance (up, down, left, right) from a starting position. 
 The grid is printed to the terminal, showing remaining walk points at each reachable position.
 The program takes five command-line arguments:
+
 ```bash
 ./manhatten <width> <height> <x> <y> <walk_limit>
 ```
