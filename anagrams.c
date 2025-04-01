@@ -22,8 +22,31 @@ int check_anagram(char* str1, char* str2) {
 	}
 	clean_str2[j] = '\0';
 	if (i != j) {
+		free(clean_str1);
+		free(clean_str2);
 		return 0;
 	}
+	int ascii[128];
+	for (int index = 0; index < 128; index++) {
+		ascii[index] = 0;
+	}
+	for (int index = 0; index < i; index++) {
+		ascii[(unsigned char)clean_str1[index]] += 1;
+	}
+	for (int index = 0; index < j; index++) {
+		ascii[(unsigned char)clean_str2[index]] -= 1;
+	}
+	for (int index = 0; index < 128; index++) {
+		if (ascii[index] != 0) {
+			free(clean_str1);
+			free(clean_str2);
+			return 0;
+		}
+	}
+	free(clean_str1);
+	free(clean_str2);
+	return 1;
+	
 }
 
 
