@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 
 int main(int argc, char** argv) {
@@ -12,6 +13,11 @@ int main(int argc, char** argv) {
 	}
 	else if (argc > 3) {
 		printf("Too many arguments\n");
+		return 1;
+	}
+	
+	if (strlen(argv[1]) != strlen(argv[2])) {
+		printf("Invalid arguments\n");
 		return 1;
 	}
 	return 0;

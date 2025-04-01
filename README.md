@@ -41,3 +41,4 @@ Handles newline characters properly and continues until EOF.
 
   ```bash
   ./manhatten <width> <height> <x> <y> <walk_limit>
+
