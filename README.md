@@ -28,15 +28,16 @@ Continues processing until EOF.
 Reads input line by line and prints each line reversed.  
 Handles newline characters properly and continues until EOF.
 
-- `manhatten.c` 
-This C program visualizes how far a character can move on a 2D grid using Manhattan distance (up, down, left, right) from a starting position. 
-The grid is printed to the terminal, showing remaining walk points at each reachable position.
-It then generates a board of the given width and height, placing the character 'C' at the coordinate (x, y). 
-Using the specified walk_limit, it calculates how many moves remain for each position the character can reach, assuming one move per grid space and no diagonal movement.
-Unreachable spaces are shown as empty (| |). 
-Reachable spaces show how many moves would be left if the character were standing there (|2|, |1|, etc).
+- `manhatten.c`  
+  This C program visualizes how far a character can move on a 2D grid using Manhattan distance (up, down, left, right) from a starting position.  
+  The grid is printed to the terminal, showing remaining walk points at each reachable position.  
+  It then generates a board of the given width and height, placing the character `'C'` at the coordinate `(x, y)`.  
+  Using the specified `walk_limit`, it calculates how many moves remain for each position the character can reach,  
+  assuming one move per grid space and no diagonal movement.  
+  Unreachable spaces are shown as empty (`| |`).  
+  Reachable spaces show how many moves would be left if the character were standing there (`|2|`, `|1|`, etc).
 
-The program takes five command-line arguments:
+  The program takes five command-line arguments:
 
-```bash
-./manhatten <width> <height> <x> <y> <walk_limit>
+  ```bash
+  ./manhatten <width> <height> <x> <y> <walk_limit>
