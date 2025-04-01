@@ -35,6 +35,7 @@ It then generates a board of the given width and height, placing the character '
 Using the specified walk_limit, it calculates how many moves remain for each position the character can reach, assuming one move per grid space and no diagonal movement.
 Unreachable spaces are shown as empty (| |). 
 Reachable spaces show how many moves would be left if the character were standing there (|2|, |1|, etc).
+
 The program takes five command-line arguments:
 
 ```bash
