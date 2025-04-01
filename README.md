@@ -44,6 +44,7 @@ Handles newline characters properly and continues until EOF.
   ```
 
 - `tr.c`
+
    A simple C program that mimics basic functionality of the Unix tr command.
    It reads from standard input, replaces specified characters with their corresponding replacements, and prints the result to standard output. 
    Input is processed line by line until EOF is reached.
