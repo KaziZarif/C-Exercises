@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 #define ROMAN_NUMBERS 13
 
@@ -21,7 +22,7 @@ void numToRoman(int num) {
 		int i = 0;
 		while(i < ROMAN_NUMBERS && num > 0) {
 			if (num >= romanSymbols[i].value) {
-				strcpy(&romanNumeral[pos], 
+				strcpy(&romanNumeral[pos], romanSymbols[i].symbol);
 			}
 		}
 	}
