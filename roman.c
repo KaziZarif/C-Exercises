@@ -47,7 +47,7 @@ int main(void) {
 		if (*endptr != '\0' && *endptr != '\n') {
 			printf("\nNot a number.\n");
 		} else {
-			printf("\nValid number: %ld\n", num);
+			numToRoman(num);
 		}
 	}
 	
