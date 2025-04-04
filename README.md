@@ -51,3 +51,9 @@ Handles newline characters properly and continues until EOF.
 - `anagram.c`  
   Program that checks whether two input strings are anagrams of each other.
   Two strings are anagrams if they contain the same characters in any order, ignoring case and non-alphanumeric characters.
+
+- `roman.c`  
+  This C program converts integers in the range 1 to 500 (inclusive) into their corresponding Roman numeral representations. 
+  Features include handling subtractive notation (e.g., 4 → IV, 9 → IX, 40 → XL, etc.) and input validation to ensure number
+  is within range.
+
