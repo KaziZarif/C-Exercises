@@ -30,7 +30,7 @@ void numToRoman(int num) {
 			}
 		}
 	}
-	printf("Roman equivalent is %s\n", romanNumeral);
+	printf("\nRoman equivalent is %s\n", romanNumeral);
 	
 }
 
