@@ -31,6 +31,7 @@ void numToRoman(int num) {
 		}
 	}
 	printf("\nRoman equivalent is %s\n", romanNumeral);
+	free(romanNumeral);
 	
 }
 
