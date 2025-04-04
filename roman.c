@@ -5,12 +5,12 @@
 
 #define ROMAN_NUMBERS 13
 
-typdef struct {
+typedef struct {
 	const char* symbol;
 	int value;
 } Roman;
 
-const romanSymbols[] = {
+const Roman romanSymbols[] = {
 	{"M", 1000}, {"CM", 900}, {"D", 500}, {"CD", 400},
     {"C", 100}, {"XC", 90}, {"L", 50}, {"XL", 40},
 	{"X", 10}, {"IX", 9}, {"V", 5}, {"IV", 4}, {"I", 1}};
@@ -23,9 +23,14 @@ void numToRoman(int num) {
 		while(i < ROMAN_NUMBERS && num > 0) {
 			if (num >= romanSymbols[i].value) {
 				strcpy(&romanNumeral[pos], romanSymbols[i].symbol);
+				pos += strlen(romanSymbols[i].symbol);
+				num -= romanSymbols[i].value;
+			} else {
+				i++;
 			}
 		}
 	}
+	printf("Roman equivalent is %s\n", romanNumeral);
 	
 }
 
