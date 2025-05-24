@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #define MAX_CODES (10)
 #define MAX_STRING (512)
@@ -17,7 +18,7 @@ int count_unique_chars(const char* str, int len) {
 			if (characters[(unsigned char)c] == 1) {
 				count++;
 			}
-		}
+		} 
 	}
 	
 	return count;
@@ -25,8 +26,41 @@ int count_unique_chars(const char* str, int len) {
 }
 
 void encode(const char* msg, int len) {
-	//Main function to encode
+	char* alphabets = malloc(11);
+	if (alphabets == NULL) {
+		printf("Memory allocation failed.\n");
+		return;
+	}
+	char* indices = malloc(len + 1);
+	if (indices == NULL) {
+		printf("Memory allocation failed.\n");
+		free(alphabets);
+		return;
+	}
+	int position[128];
+	for (int i = 0; i < 128; i++) position[i] = -1;
 	
+	int nth_unique = 0;
+	for (int i = 0; i < len; i++) {
+		char letter = msg[i];
+		if (position[(unsigned char) letter] == -1 && !isdigit(letter)) {
+			position[(unsigned char) letter] = nth_unique;
+			alphabets[nth_unique] = letter;
+			nth_unique++;
+		}
+	}
+	alphabets[nth_unique] = '\0';
+	
+	for (int i = 0; i < len; i++) {
+		char letter = msg[i];
+		indices[i] = position[(unsigned char) letter] + '0';
+	}
+	indices[len] = '\0';
+	
+	printf("%s%s\n", alphabets, indices);
+	
+	free(alphabets);
+	free(indices);
 	return;
 }
 
@@ -39,19 +73,16 @@ int main(int argc, char** argv) {
 		
 		if (buffer[length - 1] == '\n') {
 			buffer[length - 1] = '\0';
+			length--;
 		}
-		length--;
 		
 		if (count_unique_chars(buffer, length) > 10) {
 			return 1;
 		}
+		//printf("%s\n", buffer);
+		encode(buffer, length);
 	}
 	
 	
-	
-	//encode(buffer, length);
-	
-	
-	//printf("%s\n", msg);
 	return 0;
 }
