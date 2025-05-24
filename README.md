@@ -56,4 +56,14 @@ Handles newline characters properly and continues until EOF.
   This C program converts integers in the range 1 to 500 (inclusive) into their corresponding Roman numeral representations. 
   Features include handling subtractive notation (e.g., 4 → IV, 9 → IX, 40 → XL, etc.) and input validation to ensure number
   is within range.
+  
+- `roman.c`  
+  This C program encodes an input string into a compact format for secure communication between parties. The output is structured as:
+  ```bash
+  [Alphabet][Indices]
+  ```
+   Where:
+   Alphabet: The unique non-digit characters (max 10) from the original message, in order of first appearance.
+   Indices: A sequence of digits, where each character in the original string is replaced by:
+   Its index in the Alphabet (for letters and symbols)
 
