@@ -57,7 +57,7 @@ Handles newline characters properly and continues until EOF.
   Features include handling subtractive notation (e.g., 4 → IV, 9 → IX, 40 → XL, etc.) and input validation to ensure number
   is within range.
   
-- `roman.c`  
+- `encode.c`  
   This C program encodes an input string into a compact format for secure communication between parties. The output is structured as:
   ```bash
   [Alphabet][Indices]
