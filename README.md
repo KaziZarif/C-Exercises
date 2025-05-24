@@ -65,6 +65,6 @@ Handles newline characters properly and continues until EOF.
    Where:
    
    Alphabet: The unique non-digit characters (max 10) from the original message, in order of first appearance.
-   Indices: A sequence of digits, where each character in the original string is replaced by:
-   Its index in the Alphabet (for letters and symbols)
+   
+   Indices: A sequence of digits, where each character in the original string is replaced by its index in the Alphabet (for letters and symbols)
 
