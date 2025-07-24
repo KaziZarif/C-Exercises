@@ -68,3 +68,18 @@ Handles newline characters properly and continues until EOF.
    
    Indices: A sequence of digits, where each character in the original string is replaced by its index in the Alphabet (for letters and symbols)
 
+- `stopwatch.c`
+  A simple stopwatch implemented using fork() and Unix signals.
+  The parent process listens for user input (s to start, p to pause, q to quit), and the child process tracks time using sleep(1) when active.
+  Signals used:
+
+  SIGUSR1 → Start/resume counting
+
+  SIGUSR2 → Pause counting
+
+  SIGINT → Stop and print total elapsed time
+  
+  ```bash
+  ./stopwatch
+  Press s to start stopwatch, p to pause and q to quit:
+  ```
