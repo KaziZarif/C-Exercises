@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <signal.h>
-#include <sys/types.h>=
+#include <sys/types.h>
+#include <sys/wait.h>
 
 volatile sig_atomic_t start = 0;
 
@@ -30,13 +31,35 @@ int main(int argc, char** argv) {
     } 
     if (id == 0) {
         sa_1.sa_handler = &handle_sigusr1;
-        sigaction
+        sigaction(SIGUSR1, &sa_1, NULL);
+
+        sa_2.sa_handler = &handle_sigusr2;
+        sigaction(SIGUSR2, &sa_2, NULL);
+
+        sa_3.sa_handler = &handle_sigint;
+        sigaction(SIGINT, &sa_3, NULL);
+
+        int time = 0;
+        while(1) {
+            if (start == 1) { 
+                sleep(1);
+                time++;
+                printf("Time elapsed: %d second(s)\n", time);
+                fflush(stdout);
+            } 
+            else if (start == 0) {
+                pause();
+            } else {
+                printf("Total time elapsed: %d second(s)\n", time);
+                break;
+            }
+        }
 
     } else {
+        printf("Press s to start stopwatch, p to pause and q to quit: \n");
         while(1) {
             char c;
-            printf("Press s to start stopwatch, p to pause and q to quit: \n");
-            scanf("%c", &c);
+            scanf(" %c", &c);
             if (c == 's') {
                 kill(id, SIGUSR1);
             } 
